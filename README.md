@@ -1,4 +1,4 @@
-# clAPT-0.1
+# clAPT-0.1.9
 A simple utility that combines features from APT and ClamAV. Written specifically for Ubuntu.
 
 <h3>HOW TO INSTALL:</h3>
