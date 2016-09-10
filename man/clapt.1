@@ -1,0 +1,48 @@
+.TH "clapt" "1" "Septermber 1, 2016" "clapt 0.1" "APT-ClamAV Binder Utility"
+.SH "NAME"
+.LP 
+clapt \- update/upgrade APT packages and scan system for viruses
+.SH "SYNOPSIS"
+.LP 
+clapt --complete | [--update] | [--upgrade] | [--upscan] | [--fullscan] | [--clean] | {-V | --version} | {-h | --help}
+.SH "DESCRIPTION"
+.LP 
+clapt is a command line utility that combines APT package updates and upgrades with anti-virus scanning using ClamAV.
+.LP
+clapt is not an anti-virus program nor a utilitiy that will replace APT or apt-get but rather a small command-line utility that combines some of the APT options with the freshclam and clamscan utility. 
+.SH "OPTIONS"
+.LP 
+Most of the options are simple switches which enable or disable some features. To run all the features included in the program, simply run clapt without including any option.
+.TP
+\fB\-\-complete\fR
+Updates and upgrade APT packages, then perform updates for the ClamAV virus database before performing a virus scan on the client's home directory.
+.TP 
+\fB\-\-update\fR
+Run update only to resynchronize the APT package index from their sources (similar to running `apt-get update` at the command-line).
+.TP 
+\fB\-\-upgrade\fR
+Run upgrade to install the newest versions for all APT packages currently installed on the system from the sources enumerated in /etc/apt/sources.list (similar to running `apt full-upgrade` at the command-line).
+.TP
+\fB\-\-upscan\fR
+Run update for the ClamAV virus database, then perform a thorough virus scan on the clients's home directory.
+.TP
+\fB\-\-fullscan\fR
+Run update for the ClamAV virus database, then perform a full system scan (might take a little while).
+.TP
+\fB\-\-clean\fR
+Clears out the local repository of retrieved package files and remove packages that were automatically installed to satisfy dependencies for other packages and are now no longer needed.
+.TP 
+\fB\-h, \-\-help\fR
+Print help information and exit.
+.TP 
+\fB\-V, \-\-version\fR
+Print version number and exit.
+.SH BUGS
+.LP
+If you wish to report a bug in clapt, please see /usr/share/doc/debian/bug-reporting.txt or the reportbug(1) command. You can also send the Author an email via the Author's email address below. 
+.SH "AUTHOR"
+.LP 
+Rasmus van Guido <goldenfinch.net@zoho.com>
+.SH "SEE ALSO"
+.LP 
+apt-get(8), APT(8), The APT User's guide in /usr/share/doc/apt-doc/, apt_preferences(5), the APT Howto, freshclam(1), freshclam.conf(5), clamscan(1)
