@@ -1,8 +1,8 @@
 2016-09-09  Rasmus van Guido  <goldenfinch.net@zoho.com>
 
-        * clapt-main.c: Updated the main script separating the help menu
+        * cab-main.c: Updated the main script separating the help menu
           from the main script, calling it cab-ayuda.c
-        * clapt-main.c: Updated the way system() runs the commands
+        * cab-main.c: Updated the way system() runs the commands
 
 2016-09-01  Rasmus van Guido  <goldenfinch.net@zoho.com>
 
