@@ -141,9 +141,6 @@ void clapt_confirm( char *prog )
 		        exit(1);
                 }
         }
-        
-        printf("%c\n", cnf);
-        exit(1);
 }
 
 void clapt_lock_apt( char *prog )
