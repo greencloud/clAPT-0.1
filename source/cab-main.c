@@ -42,6 +42,7 @@ void clam_scan_util( char *prog, int targ );
 
 void clapt_help( void );
 void clapt_version( void );
+char *randstr( int length );
 
 int main( int argc, char *argv[] )
 {
@@ -228,7 +229,7 @@ void clam_scan_util( char *prog, int targ )
 	strcat( command, VIR_DIR );
 	strcat( command, "/" );
 	strcat( command, "SCReport-0" );
-	/* CONCATINATE SOME RANDOM CODE HERE */
+	strcat( command, randstr(8) );
 	strcat( command, ".txt " );
 
 	printf("%s: Updating ClamAV virus database. Please wait...\n", prog);
@@ -285,6 +286,31 @@ void infc_files_dir( char *dirname, char *prog )
 			printf("%s: Please create one manually in your home directory. Thank you.\n", prog);
 			exit(1);
 		}
+}
+
+char *randstr( int length ) 
+{
+        /* Generate random string */
+
+        char *string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";
+        size_t stringLen = 26*2+10+7;
+        char *randomString;
+
+        randomString = malloc(sizeof(char) * (length +1));
+
+        if ( ! randomString )
+                return (char*)0;
+
+        unsigned int key = 0;
+
+        for ( int n = 0; n < length; n++ ) {
+                key = rand() % stringLen;
+                randomString[n] = string[key];
+        }
+
+        randomString[length] = '\0';
+
+        return randomString;
 }
 
 /* NOTES: Running this utility like so: $ sudo clapt
