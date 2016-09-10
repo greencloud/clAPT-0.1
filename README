@@ -1,0 +1,26 @@
+APT-ClamAV Binder Utility (clapt) - An extended utility for APT and ClamAV
+--------------------------------------------------------------------------
+
+About
+-----
+
+clapt is a command-line utility that basically combines some APT options such
+as 'update', 'upgrade', 'autoclean' and 'autoremove' with ClamAV utililties 
+such as 'freshclam' and 'clamscan'. When updating/upgrading and cleaning my
+own computer, I usually end up typing a lot of commands at the terminal. This
+utility basically combines all of these commands in one.
+
+
+Requirements
+------------
+
+This package requires the following packages to be installed:
+gnome-common, clamav, clamd
+
+License
+-------
+
+This program is released under the terms of the GNU General Public
+License.  Please see the file COPYING for details.
+
+Last Edited - 02 September 2016
